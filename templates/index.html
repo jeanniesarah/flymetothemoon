@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="icon"
+    href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/225/rocket_1f680.png">
+  <link rel="stylesheet" href="../static/css/bulma.css" />
+  <link rel="stylesheet" href="../static/style.css" />
+  <title>Please rate your experience</title>
+</head>
+
+<body>
+  <div class="container">
+  <img src="../static/assets/reviewlogo.png" alt="fly me to the moon" class="logo"/>
+    <img src="../static/assets/astro.webp" alt="astronaut" class="logo" />
+    {% if message %}
+    <p class="message">{{ message | safe }}</p>
+    {% endif %}
+    <form action="/submit" method="POST">
+      <div class="form-group">
+        <h3>Passenger Name</h3>
+        <input type="text" name="customer" placeholder="Name of passenger" />
+      </div>
+      <div class="form-group">
+        <h3>Astronaut</h3>
+        <select name="dealer">
+          <option value="">Select name of astronaut</option>
+          <option value="Buzz Aldrin">Buzz Aldrin</option>
+          <option value="Chris Hadfield">Chris Hadfield</option>
+          <option value="Valentina Tereshkova">Valentina Tereshkova</option>
+          <option value="Jim Lovell">Jim Lovell</option>
+          <option value="Mae C. Jemison">Mae C. Jemison</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <h3>Please rate your experience from 1 = Imma need space 👎 to 10 = Abduct me 😍</h3>
+        <input type="radio" name="rating" value="1" /> 1
+        <input type="radio" name="rating" value="2" /> 2
+        <input type="radio" name="rating" value="3" /> 3
+        <input type="radio" name="rating" value="4" /> 4
+        <input type="radio" name="rating" value="5" /> 5
+        <input type="radio" name="rating" value="6" /> 6
+        <input type="radio" name="rating" value="7" /> 7
+        <input type="radio" name="rating" value="8" /> 8
+        <input type="radio" name="rating" value="9" /> 9
+        <input type="radio" name="rating" value="10" checked /> 10
+      </div>
+      <div class="form-group">
+        <h3>Comments about your experience</h3>
+        <textarea name="comments" id="" cols="30" rows="10"
+          placeholder="Please tell us what you liked and/or did not like about your experience..."></textarea>
+      </div>
+      <input type="submit" value="Submit" class="button is-warning" onclick="confirm('Blast off?');" />
+    </form>
+  </div>
+  <br>
+  <br>
+</body>
+
+</html>
