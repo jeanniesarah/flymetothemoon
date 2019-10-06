@@ -1,4 +1,4 @@
-# Final Project: Fly Me to The Moon 🚀
+# Submission for Harvard's CS50W: Fly Me to The Moon 🚀
 
 Web Programming with Python and JavaScript
 
